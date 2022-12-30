@@ -31,7 +31,7 @@ function MainHeader() {
               className="form-select mb-3 mb-lg-0 w-50 me-lg-3 py-2 px-3"
               placeholder="Please type a location"
             >
-              <option>--- Select Location ---</option>
+              <option>--- Select My Location ---</option>
               {locationList.map((location, index) => {
                 return (
                   <option key={index}>
