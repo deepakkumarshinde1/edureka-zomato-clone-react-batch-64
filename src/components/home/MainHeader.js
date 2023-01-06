@@ -8,7 +8,7 @@ function MainHeader() {
   let [locationList, setLocationList] = useState([]);
 
   let getLocationList = async () => {
-    let url = "http://localhost:5003/api/get-location-list";
+    let url = "http://142.93.210.83:5003/api/get-location-list";
     let { data } = await axios.get(url);
     setLocationList(data.location);
   };

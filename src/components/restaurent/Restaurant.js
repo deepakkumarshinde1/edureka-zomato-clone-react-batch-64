@@ -52,7 +52,8 @@ function Restaurant() {
   let [totalPrice, setTotalPrice] = useState(0);
 
   let getRestaurantDetails = async () => {
-    let url = "http://localhost:5003/api/get-restaurant-details-by-id/" + id;
+    let url =
+      "http://142.93.210.83:5003/api/get-restaurant-details-by-id/" + id;
     let { data } = await axios.get(url);
     if (data.status === true) {
       setRDetails({ ...data.restaurants });
@@ -62,7 +63,7 @@ function Restaurant() {
   };
 
   let getMenuItems = async () => {
-    let url = `http://localhost:5003/api/get-menu-items/${id}`;
+    let url = `http://142.93.210.83:5003/api/get-menu-items/${id}`;
     let { data } = await axios.get(url);
     console.log(data);
     if (data.status === true) {
@@ -94,7 +95,7 @@ function Restaurant() {
   let makePayment = async () => {
     let userOrder = menuList.filter((menu) => menu.qty > 0);
 
-    let url = "http://localhost:5003/api/gen-order-id";
+    let url = "http://142.93.210.83:5003/api/gen-order-id";
     let { data } = await axios.post(url, { amount: totalPrice });
 
     if (data.status === false) {
@@ -124,7 +125,7 @@ function Restaurant() {
           totalAmount: totalPrice,
         };
         let { data } = await axios.post(
-          "http://localhost:5003/api/verify-payment",
+          "http://142.93.210.83:5003/api/verify-payment",
           verifyData
         );
         if (data.status === true) {

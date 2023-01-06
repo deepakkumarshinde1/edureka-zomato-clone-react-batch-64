@@ -9,7 +9,7 @@ function MealTypeList() {
   let [mealList, setMealList] = useState([]); // mealList => [] #1
 
   let getMenuListFromServer = async () => {
-    let url = "http://localhost:5003/api/get-meal-types-list";
+    let url = "http://142.93.210.83:5003/api/get-meal-types-list";
     let { data } = await axios.get(url); // #4
     setMealList(data.meal_types); //#5 [...data.meal_types] => recreate a memory
   };
